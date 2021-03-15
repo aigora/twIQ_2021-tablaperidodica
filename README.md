@@ -1,10 +1,12 @@
-# [Título del trabajo]
+# [Encuesta quimica]
 
-[Descripción breve del proyecto a realizar (2-3 frases).]
+[El proyecto tartará de dar información sobre la tabla peridóica para posteriormente hacer una encuesta donde se dará una nota a los usuarios que hayan participado, pudiendo elegir en el menu si desean permanecer o salir del programa .]
 
 ## Integrantes del equipo
 
-[Nombres, apellidos, y usuario GitHub de los integrantes del equipo.]
+[David Molano González , davidmolano25.
+ Hector Domínguez Mora , 
+ Iker Gorospe Mateos , ]
 
 ## Objetivos del trabajo
 
