@@ -4,9 +4,9 @@
 
 ## Integrantes del equipo
 
-[David Molano González , davidmolano25
- Hector Domínguez Mora , heeeectorito 
- Iker Gorospe Mateos , ]
+[David Molano González , davidmolano25.
+ Hector Domínguez Mora , heeeectorito. 
+ Iker Gorospe Mateos , IkertxoGM.]
 
 ## Objetivos del trabajo
 
