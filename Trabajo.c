@@ -37,7 +37,7 @@ int main(){
 			printf("Gracias por usar nuestro programa. Hasta pronto.\n");//El usuario sale del programa
 		break;
 			     	
-		default: 
+	        default: 
 			     printf("ERROR. Porfavor introduce un numero valido.\n");	     	
 		 }
 	     
