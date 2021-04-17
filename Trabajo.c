@@ -1,7 +1,141 @@
 #include<stdio.h>
+#include <string.h>
+
+struct TTabla {      // Estructura que almacena todos los simbolos para la creación de la tabla periódica.
+	char elemento[3];
+};
+
 int main(){
+	
+	FILE *pfichero1;
+	
 	int opcion,num_atom,con=0;
+	int nelemento=0,k,longitud;
 	char nombre[30],plata[3];
+	
+	struct TTabla clase[500];
+	
+	pfichero1 = fopen("Tabla.txt", "r");
+	
+	if(pfichero1 == NULL){// Comprobamos que el fichero existe y que funciona correctamente.
+		
+		printf("No se ha podido crear el fichero.\n");
+		return 0;
+	}
+	
+	while(fscanf(pfichero1, "%s", clase[nelemento].elemento) != EOF){//Con este bluce recorremos el fichero y lo almacenamos en el vector de estructuras.
+		
+		nelemento++;// con esta variable contamos toods los elementos de la tabla periódica.
+	}
+	
+	fclose( pfichero1 );// Cerramos el fichero, puesto que no lo vamos a utilizar más.
+	
+	
+	
+	printf("%s",clase[0].elemento);
+	printf("                                                  ");
+	printf("%s",clase[1].elemento);
+	printf("\n");
+		
+	for(k=2; k<=3; k++){
+		printf("%s ", clase[k].elemento);
+		longitud=strlen(clase[k].elemento);//En cada bucle para poner la tabla bien ordenada medimos la longitud del símbolo, que puede ser de 1 ó 2 caracteres,
+		if (longitud==1){				   //y si longitud = 1 imprimimos un espacio para poder colocar todos los símbolos bien.
+			printf(" ");
+		}
+	}
+		
+	printf("                              ");
+		
+	for(k=4; k<=9; k++){
+		printf("%s ", clase[k].elemento);
+		longitud=strlen(clase[k].elemento);
+		if (longitud==1){
+			printf(" ");
+		}
+	}
+		
+	printf("\n");
+		
+	for(k=10; k<=11; k++){
+		printf("%s ", clase[k].elemento);
+		longitud=strlen(clase[k].elemento);
+		if (longitud==1){
+			printf(" ");
+		}
+	}
+		
+	printf("                              ");
+		
+	for(k=12; k<=17; k++){
+		printf("%s ", clase[k].elemento);
+		longitud=strlen(clase[k].elemento);
+		if (longitud==1){
+			printf(" ");
+		}
+	}
+		
+	printf("\n");
+		
+	for(k=18; k<=35; k++){
+		printf("%s ", clase[k].elemento);
+		longitud=strlen(clase[k].elemento);
+		if (longitud==1){
+			printf(" ");
+		}
+	}
+	
+	printf("\n");
+		
+	for(k=36; k<=53; k++){
+		printf("%s ", clase[k].elemento);
+		longitud=strlen(clase[k].elemento);
+		if (longitud==1){
+			printf(" ");
+		}
+	}
+
+	printf("\n");
+	
+	for(k=54; k<=71; k++){
+		printf("%s ", clase[k].elemento);
+		longitud=strlen(clase[k].elemento);
+		if (longitud==1){
+			printf(" ");
+		}
+	}
+	
+	printf("\n");
+		
+	for(k=72; k<=89; k++){
+		printf("%s ", clase[k].elemento);
+		longitud=strlen(clase[k].elemento);
+		if (longitud==1){
+			printf(" ");
+		}
+	}
+
+	printf("\n\n      ");
+	
+	for(k=90; k<=103; k++){
+		printf("%s ", clase[k].elemento);
+		longitud=strlen(clase[k].elemento);
+		if (longitud==1){
+			printf(" ");
+		}
+	}
+	
+	printf("\n      ");
+	
+	for(k=104; k<=nelemento-1 ;k++){
+		printf("%s ", clase[k].elemento);
+		longitud=strlen(clase[k].elemento);
+		if (longitud==1){
+			printf(" ");
+		}
+	}
+	printf("\n\n\n\n");	
+	
 	
 	printf("------------------------------------------\n");
 	printf("------Programa de la Tabla Periodica------\n");
@@ -42,6 +176,5 @@ int main(){
 		 }
 	     
 	 }while (opcion!=4);
-	 
-	 return 0;
+	
 }
