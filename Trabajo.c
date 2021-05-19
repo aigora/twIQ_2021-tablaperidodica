@@ -83,8 +83,12 @@ void dibujamenu(){
 	
 	printf("\t4. Cerrar el programa.\n\n");
 	
+	printf("--------------------------------------------------------------------------------\n\n");
+	
 }
 void tablaperiodica(struct TTabla clase[]){
+	
+	int k, longitud, nelemento = 118;
 	
 	printf("%s",clase[0].elemento);
 	printf("                                                  ");
@@ -191,4 +195,7 @@ void tablaperiodica(struct TTabla clase[]){
 	printf("\n\n\n\n");	
 	
 }
+
+
+
 
