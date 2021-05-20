@@ -51,7 +51,7 @@ void nombreElementos(struct TElementos elemento[]);
 void verCredenciales(struct TCredenciales vector[]);
 void Cuestionario1();
 void Cuestionario2();
-
+float Cuestionario3();
 
 //------------------------------//
 
@@ -163,15 +163,18 @@ int main(){
 			case 6:printf("Ha entrado al Cuestionario 2.\n");
 				   Cuestionario2();
 			break;	
+			
+			case 7:printf("Ha entrado al Cuestionario 3.\n");
+				   Cuestionario3();
 		
-			case 7:printf("Gracias por haber usado nuestro programa.\n");
+			case 8:printf("Gracias por haber usado nuestro programa.\n");
 			break;
 		
 			default: printf("Por favor introduzca un valor entre 1 y 6.\n");
 		
 		}
 		
-	}while(opcion!=7);
+	}while(opcion!=8);
 	
 }
 
@@ -197,7 +200,9 @@ void pintamenu(){ //Función que muestra el menu usuario
 	
 	printf("\t6. Realizar Cuestionario 2.\n\n");
 	
-	printf("\t7. Cerrar el programa.\n\n");
+	printf("\t7. Realizar Cuestionario 3.\n\n");
+	
+	printf("\t8. Cerrar el programa.\n\n");
 	
 	printf("--------------------------------------------------------------------------------\n\n");
 }
@@ -627,4 +632,66 @@ void Cuestionario2(){ //Funcion Cuestionario 2
     printf("Tu calificacion es: %i", nota);
     
 }
+
+float Cuestionario3(){
+	float error=0,nota=0,grupo,periodo,grupo_Ag=11,periodo_Ag=5,grupo_Ca=2,periodo_Ca=4,grupo_I=17,periodo_I=5,grupo_P=15,periodo_P=3,grupo_Fe=8,periodo_Fe=4;
+	
+	//PREGUNTA  1
+	printf("Introduce el grupo y perido de la plata (Ag)\n");
+	scanf("%f %f",&grupo,&periodo);
+	if(grupo==grupo_Ag && periodo==periodo_Ag){
+		printf("CORRECTO\n");
+		nota+=2;
+	}else{
+		printf("ERROR\n");
+		error+=0.25;
+	}
+	
+	//PREGUNTA  2
+	printf("Introduce el grupo y perido del calcio (Ca)\n");
+	scanf("%f %f",&grupo,&periodo);
+	if(grupo==grupo_Ca && periodo==periodo_Ca){
+		printf("CORRECTO\n");
+		nota+=2;
+	}else{
+		printf("ERROR\n");
+		error+=0.25;
+	}
+	
+	//PREGUNTA  3
+	printf("Introduce el grupo y perido del Yodo (I)\n");
+	scanf("%f %f",&grupo,&periodo);
+	if(grupo==grupo_I && periodo==periodo_I){
+		printf("CORRECTO\n");
+		nota+=2;
+	}else{
+		printf("ERROR\n");
+		error+=0.25;
+	}
+	
+	//PREGUNTA  4
+	printf("Introduce el grupo y perido del fosforo (P)\n");
+	scanf("%f %f",&grupo,&periodo);
+	if(grupo==grupo_P && periodo==periodo_P){
+		printf("CORRECTO\n");
+		nota+=2;
+	}else{
+		printf("ERROR\n");
+		error+=0.25;
+	}
+	
+	//PREGUNTA  5
+	printf("Introduce el grupo y perido del hierro (Fe)\n");
+	scanf("%f %f",&grupo,&periodo);
+	if(grupo==grupo_Fe && periodo==periodo_Fe){
+		printf("CORRECTO\n");
+		nota+=2;
+	}else{
+		printf("ERROR\n");
+		error+=0.25;
+	}
+	nota-=error;
+	return nota;
+}
+
 
