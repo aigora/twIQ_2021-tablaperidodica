@@ -1,0 +1,118 @@
+Hidrogeno    H	     1           1.008          1        1
+Helio        He      2           4.003          1        18    
+Litio        Li      3           6.941          2        1
+Berilio      Be      4           9.012          2        2 
+Boro         B       5           10.811         2        13
+Carbono      C       6           12.011         2        14
+Nitrogeno    N       7           14.007         2        15
+Oxigeno      O       8           15.999         2        16
+Fluor        F       9           18.998         2        17
+Neon         Ne      10          20.180         2        18
+Sodio        Na      11          22.990         3        1        
+Magnesio     Mg      12          24.305         3        2
+Aluminio     Al      13          26.982         3        13
+Silicio      Si      14          28.086         3        14
+Fosforo      P       15          30.974         3        15
+Azufre       S       16          32.065         3        16
+Cloro        Cl      17          35.453         3        17
+Argon        Ar      18          39.948         3        18
+Potasio      K       19          39.098         4        1
+Calcio       Ca      20          40.078         4        2
+Escandio     Sc      21          44.956         4        3
+Titanio      Ti      22          47.867         4        4
+Vanadio      V       23          50.942         4        5
+Cromo        Cr      24          51.996         4        6
+Manganeso    Mn      25          54.938         4        7
+Hierro       Fe      26          55.845         4        8
+Cobalto      Co      27          58.933         4        9
+Niquel       Ni      28          58.693         4        10
+Cobre        Cu      29          63.546         4        11
+Zinc         Zn      30          65.409         4        12 
+Galio        Ga      31          69.723         4        13
+Germanio     Ge      32          72.640         4        14
+Arsenico     As      33          74.922         4        15
+Selenio      Se      34          78.960         4        16
+Bromo        Br      35          79.904         4        17
+Kripton      Kr      36          83.798         4        18
+Rubidio      Rb      37          85.468         5        1
+Estroncio    Sr      38          87.620         5        2 
+Itrio        Y       39          88.906         5        3 
+Zirconio     Zr      40          91.224         5        4
+Niobio       Nb      41          92.906         5        5
+Molibdeno    Mo      42          95.940         5        6
+Tecnecio     Tc      43          98.906         5        7
+Rutenio      Ru      44          101.070        5        8
+Rodio        Rh      45          102.906        5        9
+Paladio      Pa      46          106.420        5        10
+Plata        Ag      47          107.868        5        11
+Cadmio       Cd      48          112.411        5        12 
+Indio        In      49          114.818        5        13
+Estaño       Sr      50          118.710        5        14 
+Antimonio    Sb      51          121.760        5        15 
+Teluro       Te      52          127.600        5        16
+Yodo         I       53          126.904        5        17
+Xenon        Xe      54          131.293        5        18
+Cesio        Cs      55          132.905        6        1
+Bario        Ba      56          137.327        6        2 
+Lantano      La      57          138.905        6        
+Cerio        Ce      58          140.116        6        
+Praseodimio  Pr      59          140.908        6
+Neodimio     Nd      60          144.242        6
+Prometio     Pm      61          146.915        6
+Samario      Sm      62          150.360        6
+Europio      Eu      63          151.964        6 
+Gadolinio    Gd      64          157.250        6 
+Terbio       Tb      65          158.925        6
+Diprosio     Dy      66          162.500        6 
+Holmio       Ho      67          164.930        6
+Erbio        Er      68          167.259        6
+Tulio        Tm      69          168.934        6 
+Iterbio      Yb      70          173.040        6
+Lutecio      Lu      71          174.967        6         3
+Hafnio       Hf      72          178.490        6         4
+Tantalio     Ta      73          180.948        6         5
+Wolframio    W       74          183.840        6         6
+Reino        Re      75          186.207        6         7
+Osmio        Os      76          190.230        6         8 
+Iridio       Ir      77          192.217        6         9
+Platino      Pt      78          195.084        6         10
+Oro          Au      79          196.967        6         11
+Mercurio     Mg      80          200.590        6         12
+Talio        Tl      81          204.383        6         13
+Plomo        Pb      82          207.200        6         14 
+Bismuto      Bi      83          208.980        6         15 
+Polonio      Po      84          208.982        6         16
+Astato       At      85          209.987        6         17
+Radon        Rn      86          222.018        6         18
+Francio      Fr      87          223.020        7         1
+Radio        Ra      88          226.025        7         2
+Actinio      Ac      89          227.028        7
+Torio        Th      90          232.038        7
+Protactinio  Pa      91          231.036        7
+Uranio       U       92          238.029        7
+Neptunio     Np      93          237.048        7
+Plutonio     Pu      94          244.064        7
+Americio     Am      95          243.061        7
+Curio        Cm      96          247.070        7
+Berkelio     Bk      97          247.070        7
+Californio   Cf      98          251.080        7
+Einstenio    Es      99          252.083        7
+Fermio       Fm      100         257.095        7
+Mendelivio   Md      101         258.098        7
+Nobelio      No      102         259.101        7
+Laurencio    Lr      103         260.105        7          3
+Rutherfordio Rf      104         261.109        7          4
+Dubnio       Db      105         262.114        7          5
+Seaborgio    Sg      106         263.118        7          6 
+Bohrio       Bh      107         262.123        7          7
+Hassio       Hs      108         265.000        7          8
+Meitnerio    Mt      109         266.000        7          9
+Darmstatio   Ds      110         269.000        7          10
+Roentgenio   Rg      111         272.000        7          11
+Copernicio   Cn      112         285.000        7          12
+Nihonio      Nh      113         284.000        7          13 
+Flerovio     Fl      114         289.000        7          14
+Moscovio     Mc      115         288.000        7          15 
+Livermorio   Lv      116         290.000        7          16
+Teneso       Ts      117         117.000        7          17
+Oganeson     Og      118         294.000        7          18
