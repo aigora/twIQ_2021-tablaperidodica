@@ -50,7 +50,7 @@ void elementos(struct TElementos elemento[]);	  // paso por referencia, tomando 
 void nombreElementos(struct TElementos elemento[]);
 void verCredenciales(struct TCredenciales vector[]);
 float Cuestionario1();
-void Cuestionario2();
+float Cuestionario2();
 float Cuestionario3();
 
 //------------------------------//
@@ -58,7 +58,7 @@ float Cuestionario3();
 int main(){ 
 //---------------------------------//
 
-	setlocale(LC_CTYPE, "Spanish"); // Aquí lo seteamos en español.
+	setlocale(LC_CTYPE, "Spanish"); // Aquí seteamos en español el sistema de lenguaje.
 
 //---------------------------------//
 	
@@ -152,7 +152,7 @@ int main(){
 				   elementos(elemento);
 			break;
 			
-			case 4:printf("Indica el numero de un elemento y te decimos informacion de el.\n");
+			case 4:printf("Indica el nombre de un elemento y te decimos informacion de el.\n");
 				   nombreElementos(elemento);
 			break;
 		
@@ -170,7 +170,7 @@ int main(){
 			case 8:printf("Gracias por haber usado nuestro programa.\n");
 			break;
 		
-			default: printf("Por favor introduzca un valor entre 1 y 6.\n");
+			default: printf("Por favor introduzca un valor entre 0 y 8.\n");
 		
 		}
 		
@@ -443,11 +443,12 @@ float Cuestionario1(){ // Funcion Cuestionario 1
 	
 	printf("___PRIMER CUESTIONARIO___\n\n");
 	
-	printf("NOTA: Las respuetas correctas sumaran 2 puntos y las erroneas restaran 0.5 punto \n\n");
+	printf("NOTA: Las respuestas correctas sumarán 2 puntos y las erróneas restarán 0,5 puntos \n\n");
 	
 	
-	//1PREGUNNTA
-	printf("Que simbolo tiene el elemento quimico platino. \n\n");
+	//1PREGUNTA
+	
+	printf("Que símbolo tiene el elemento químico Platino. \n\n");
 	fflush(stdin);
 	gets(simbolo);
     
@@ -461,9 +462,9 @@ float Cuestionario1(){ // Funcion Cuestionario 1
 		error+=0.5;
 	}
     
+    //2PREGUNTA
     
-    //2PREGUNNTA
-    printf("Que simbolo tiene el elemento quimico cloro \n\n");
+    printf("Que símbolo tiene el elemento químico Cloro \n\n");
     fflush(stdin);
 	gets(simbolo);
 	
@@ -479,8 +480,9 @@ float Cuestionario1(){ // Funcion Cuestionario 1
 	
 	fflush(stdin);
 	
-    //3PREGUNNTA
-    printf("Que simbolo tiene el elemento quimico bsimuto \n\n");
+    //3PREGUNTA
+    
+    printf("Que símbolo tiene el elemento químico Bismuto \n\n");
     fflush(stdin);
 	gets(simbolo);
     
@@ -494,8 +496,9 @@ float Cuestionario1(){ // Funcion Cuestionario 1
 		error+=0.5;
 	}
 	
-	//4PREGUNNTA
-	printf("Que simbolo tiene el elemento quimico antimonio \n\n");
+	//4PREGUNTA
+	
+	printf("Que símbolo tiene el elemento químico Antimonio \n\n");
 	fflush(stdin);
 	gets(simbolo);
     
@@ -509,8 +512,9 @@ float Cuestionario1(){ // Funcion Cuestionario 1
 		error+=0.5;
 	}
 	
-	//5PREGUNNTA
-	printf("Que simbolo tiene el elemento quimico berilio \n\n");
+	//5PREGUNTA
+	
+	printf("Que símbolo tiene el elemento químico Berilio \n\n");
 	fflush(stdin);
 	gets(simbolo);
 	
@@ -523,166 +527,201 @@ float Cuestionario1(){ // Funcion Cuestionario 1
 		printf("FALSO\n");
 		error+=0.5;
 	}
-        nota-=error;
-        
-return nota;
+	
+    nota-=error;
+    
+    if(nota <= 0){
+    	
+    	nota = 0;
+	}
+	
+	printf("\nSu nota es de %.2f.\n", nota );
+	return nota;
 }
 
-void Cuestionario2(){ //Funcion Cuestionario 2
+float Cuestionario2(){ //Función Cuestionario 2
 	
-	char simbolo;
-	int h, ne, bi, cl, ba, contAciertos=0, contErrores=0, errores=0, aciertos=0, nota;
+	//char simbolo;
+	int Mn, Au, Ga, S, Ar;
+	float error=0, nota=0;
 
 	system("cls");
 	
 	printf("___SEGUNDO CUESTIONARIO___\n\n");
 	
-	printf("NOTA: Las respuetas correctas sumaran 2 puntos y las erroneas restaran 1 punto \n\n");
+	printf("NOTA: Las respuetas correctas sumaran 2 puntos y las erroneas restaran 0,5 puntos \n\n");
 	
 	printf("ATENCION: Ten cuidado de no introducir letras, puesto que tendrás que empezar de cero.\n\n");
 	
 	
-	//1PREGUNNTA
-	printf("Escribe cual es el numero atomico del Hidrogeno \n\n");
+	//1PREGUNTA
+	
+	printf("¿Cuál es el número atómico del Manganeso?\n\n");
+	scanf("%d",&Mn);
+    
+	if (Mn == 25) {
+		
+		printf("CORRECTO\n");
+		nota += 2;
+		
+	} else {
+		
+		printf("FALSO\n");
+		error += 0.5;
+	}
+    
+    //2PREGUNTA
+    
+	printf("¿Cuál es el número atómico del Oro?\n\n");
+	scanf("%d",&Au);
+    
+	if(Au == 79){
+		
+		printf("CORRECTO\n");
+		nota += 2;
+		
+	} else {
+		
+		printf("FALSO\n");
+		error += 0.5;
+	}
+	
+	//3PREGUNTA
+	
+	printf("¿Cuál es el número atómico del Galio?\n\n");
+	scanf("%d",&Ga);
+    
+	if (Ga == 31) {
+		
+		printf("CORRECTO\n");
+		nota += 2;
+		
+	} else {
+		
+		printf("FALSO\n");
+		error += 0.5;
+	}
+	
+	//4PREGUNTA
+	
+	printf("¿Cuál es el número atómico del Azufre?\n\n");
 	fflush(stdin);
-	scanf("%i",&h);
+	scanf("%d",&S);
     
-	if (h == 1) {
-		printf("VERDADERO\n");
-		contAciertos+=2;
-		aciertos++;
+	if (S == 16){
+		
+		printf("CORRECTO\n");
+		nota += 2;
+		
 	} else {
+		
 		printf("FALSO\n");
-		contErrores++;
-		errores++;
-	}
-    
-    //2PREGUNNTA
-	printf("Escribe cual es el numero atomico del Neon \n\n");
-	scanf("%i",&ne);
-    
-	if(ne == 10){
-		printf("VERDADERO\n");
-		contAciertos+=2;
-		aciertos++;
-	} else {
-		printf("FALSO\n");
-		contErrores++;
-		errores++;
+		error += 0.5;
 	}
 	
-	//3PREGUNNTA
-	printf("Escribe cual es el numero atomico del Bismuto \n\n");
-	scanf("%i",&bi);
+	//5PREGUNTA
+	
+	printf("¿Cuál es el número atómico del Argón?\n\n");
+	scanf("%d",&Ar);
     
-	if (bi == 83) {
-		printf("VERDADERO\n");
-		contAciertos+=2;
-		aciertos++;
+	if (Ar == 18) {
+		
+		printf("CORRECTO\n");
+		nota += 2;
+		
 	} else {
+		
 		printf("FALSO\n");
-		contErrores++;
-		errores++;
+		error += 0.5;
+	}
+    
+    nota-=error;
+    
+    if(nota <= 0){
+    	nota = 0;
 	}
 	
-	//4PREGUNNTA
-	printf("Escribe cual es el numero atomico del Cloro \n\n");
-	scanf("%i",&cl);
-    
-	if (cl == 17){
-		printf("VERDADERO\n");
-		contAciertos+=2;
-		aciertos++;
-	} else {
-		printf("FALSO\n");
-		contErrores++;
-		errores++;
-	}
-	
-	//5PREGUNNTA
-	printf("Escribe cual es el numero atomico del Bario \n\n");
-	scanf("%i",&ba);
-    
-	if (ba == 56) {
-		printf("VERDADERO\n");
-		contAciertos+=2;
-		aciertos++;
-	} else {
-		printf("FALSO\n");
-		contErrores++;
-		errores++;
-	}
-    
-    printf("Tus respuestas acertadas han sido %i\n\n", aciertos);
-    printf("Tus respuestas erroneas han sido %i\n\n", errores);
-    
-	nota=contAciertos-contErrores;
-	if (nota<0){
-		nota=0;
-	}
-    printf("Tu calificacion es: %i", nota);
-    
+	printf("\nSu nota es de %.2f.\n", nota );
+	return nota;
+        
 }
 
 float Cuestionario3(){
+	
 	float error=0,nota=0,grupo,periodo,grupo_Ag=11,periodo_Ag=5,grupo_Ca=2,periodo_Ca=4,grupo_I=17,periodo_I=5,grupo_P=15,periodo_P=3,grupo_Fe=8,periodo_Fe=4;
+	//
+	
+	system("cls");// Se utiliza para borrar la pantalla y poder introducir los valores de manera más ordenada.
+	
+	printf("___TERCER CUESTIONARIO___\n\n");
+	
+	printf("NOTA: Las respuetas correctas sumarán 2 puntos y las erroneas restarán 0,5 puntos \n\n");
 	
 	//PREGUNTA  1
-	printf("Introduce el grupo y perido de la plata (Ag)\n");
+	
+	printf("Introduce el grupo y periodo de la Plata (Ag)\n");
 	scanf("%f %f",&grupo,&periodo);
 	if(grupo==grupo_Ag && periodo==periodo_Ag){
 		printf("CORRECTO\n");
 		nota+=2;
 	}else{
 		printf("ERROR\n");
-		error+=0.25;
+		error+=0.5;
 	}
 	
 	//PREGUNTA  2
-	printf("Introduce el grupo y perido del calcio (Ca)\n");
+	
+	printf("Introduce el grupo y periodo del Calcio (Ca)\n");
 	scanf("%f %f",&grupo,&periodo);
 	if(grupo==grupo_Ca && periodo==periodo_Ca){
 		printf("CORRECTO\n");
 		nota+=2;
 	}else{
 		printf("ERROR\n");
-		error+=0.25;
+		error+=0.5;
 	}
 	
 	//PREGUNTA  3
-	printf("Introduce el grupo y perido del Yodo (I)\n");
+	
+	printf("Introduce el grupo y periodo del Yodo (I)\n");
 	scanf("%f %f",&grupo,&periodo);
 	if(grupo==grupo_I && periodo==periodo_I){
 		printf("CORRECTO\n");
 		nota+=2;
 	}else{
 		printf("ERROR\n");
-		error+=0.25;
+		error+=0.5;
 	}
 	
 	//PREGUNTA  4
-	printf("Introduce el grupo y perido del fosforo (P)\n");
+	
+	printf("Introduce el grupo y periodo del Fósforo (P)\n");
 	scanf("%f %f",&grupo,&periodo);
 	if(grupo==grupo_P && periodo==periodo_P){
 		printf("CORRECTO\n");
 		nota+=2;
 	}else{
 		printf("ERROR\n");
-		error+=0.25;
+		error+=0.5;
 	}
 	
 	//PREGUNTA  5
-	printf("Introduce el grupo y perido del hierro (Fe)\n");
+	
+	printf("Introduce el grupo y periodo del Hierro (Fe)\n");
 	scanf("%f %f",&grupo,&periodo);
 	if(grupo==grupo_Fe && periodo==periodo_Fe){
 		printf("CORRECTO\n");
 		nota+=2;
 	}else{
 		printf("ERROR\n");
-		error+=0.25;
+		error+=0.5;
 	}
 	nota-=error;
+	
+	if(nota <= 0){
+    	nota = 0;
+	}
+	
+	printf("\nSu nota es de %.2f.\n", nota );
 	return nota;
 }
-
-
