@@ -49,7 +49,7 @@ void Credenciales(struct TCredenciales vector[]); // Puesto que las funciones so
 void elementos(struct TElementos elemento[]);	  // paso por referencia, tomando simpre las estructuras previas.
 void nombreElementos(struct TElementos elemento[]);
 void verCredenciales(struct TCredenciales vector[]);
-void Cuestionario1();
+float Cuestionario1();
 void Cuestionario2();
 float Cuestionario3();
 
@@ -434,107 +434,98 @@ void verCredenciales(struct TCredenciales vector[]){ //Funcion que permite ver l
 	
 }
 
-void Cuestionario1(){ // Funcion Cuestionario 1
+float Cuestionario1(){ // Funcion Cuestionario 1
 	
-	char simbolo ,platino[5], platinosol[5]= "Pt", fluor, plata[5], platasol[5]= "Ag",  rodio[5], rodiosol[5]= "Rh", wolframio ;
-	int resultado, contAciertos=0, contErrores=0, errores=0, aciertos=0, nota;
+	char simbolo[5], platino[5]= "Pt", bismuto[5]= "Bi", antimonio[5]= "Sb",cloro[5]="Cl",berilio[5]="Be";
+	float resultado,error=0,nota=0;
 	
 	system("cls");
 	
 	printf("___PRIMER CUESTIONARIO___\n\n");
 	
-	printf("NOTA: Las respuetas correctas sumaran 2 puntos y las erroneas restaran 1 punto \n\n");
+	printf("NOTA: Las respuetas correctas sumaran 2 puntos y las erroneas restaran 0.5 punto \n\n");
 	
 	
 	//1PREGUNNTA
-	printf("Que simbolo tiene el elemento quimico platino \n\n");
+	printf("Que simbolo tiene el elemento quimico platino. \n\n");
 	fflush(stdin);
-	gets(platino);
+	gets(simbolo);
     
-    resultado = strcmp(platino, platinosol);
+    resultado = strcmp(platino, simbolo);
 	if (resultado == 0) {
 		printf("VERDADERO\n");
-		contAciertos+=2;
-		aciertos++;
+		nota+=2;
+		
 	} else {
 		printf("FALSO\n");
-		contErrores++;
-		errores++;
+		error+=0.5;
 	}
     
     
     //2PREGUNNTA
-    printf("Que simbolo tiene el elemento quimico fluor \n\n");
+    printf("Que simbolo tiene el elemento quimico cloro \n\n");
     fflush(stdin);
-	scanf("%c",&fluor);
+	gets(simbolo);
 	
-	if (fluor == 'F') {
+	resultado = strcmp(cloro, simbolo);
+	if (resultado == 0) {
 		printf("VERDADERO\n");
-		contAciertos+=2;
-		aciertos++;
+		nota+=2;
+		
 	} else {
 		printf("FALSO\n");
-		contErrores++;
-		errores++;
+		error+=0.5;
 	}
 	
 	fflush(stdin);
 	
     //3PREGUNNTA
-    printf("Que simbolo tiene el elemento quimico plata \n\n");
+    printf("Que simbolo tiene el elemento quimico bsimuto \n\n");
     fflush(stdin);
-	gets(plata);
+	gets(simbolo);
     
-    resultado = strcmp(plata, platasol);
+    resultado = strcmp(bismuto, simbolo);
 	if (resultado == 0) {
 		printf("VERDADERO\n");
-		contAciertos+=2;
-		aciertos++;
+		nota+=2;
+		
 	} else {
 		printf("FALSO\n");
-		contErrores++;
-		errores++;
+		error+=0.5;
 	}
 	
 	//4PREGUNNTA
-	printf("Que simbolo tiene el elemento quimico rodio \n\n");
+	printf("Que simbolo tiene el elemento quimico antimonio \n\n");
 	fflush(stdin);
-	gets(rodio);
+	gets(simbolo);
     
-    resultado = strcmp(rodio, rodiosol);
-	if (resultado == 0) {
+    resultado = strcmp(antimonio, simbolo);
+		if (resultado == 0) {
 		printf("VERDADERO\n");
-		contAciertos+=2;
-		aciertos++;
+		nota+=2;
+		
 	} else {
 		printf("FALSO\n");
-		contErrores++;
-		errores++;
+		error+=0.5;
 	}
 	
 	//5PREGUNNTA
-	printf("Que simbolo tiene el elemento quimico wolframio \n\n");
+	printf("Que simbolo tiene el elemento quimico berilio \n\n");
 	fflush(stdin);
-	scanf("%c",&wolframio);
+	gets(simbolo);
 	
-	if (wolframio == 'W') {
+	resultado = strcmp(berilio, simbolo);
+	if (resultado == 0) {
 		printf("VERDADERO\n");
-		contAciertos+=2;
-		aciertos++;
+		nota+=2;
+		
 	} else {
 		printf("FALSO\n");
-		contErrores++;
-		errores++;
+		error+=0.5;
 	}
-    
-    printf("Tus respuestas acertadas han sido %i\n\n", aciertos);
-    printf("Tus respuestas erroneas han sido %i\n\n", errores);
-    
-	nota=contAciertos-contErrores;
-	if (nota<0){
-		nota=0;
-	}
-    printf("Tu calificacion es: %i", nota);
+        nota-=error;
+        
+return nota;
 }
 
 void Cuestionario2(){ //Funcion Cuestionario 2
