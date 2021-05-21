@@ -168,7 +168,10 @@ int main(){
 				   Cuestionario3();
 			break;
 				
-			case 8:printf("Gracias por haber usado nuestro programa.\n");
+			case 8:
+			system("cls");
+			printf("Gracias por haber usado nuestro programa.\n");
+				
 			break;
 		
 			default: printf("Por favor introduzca un valor entre 0 y 8.\n");
