@@ -166,7 +166,8 @@ int main(){
 			
 			case 7:printf("Ha entrado al Cuestionario 3.\n");
 				   Cuestionario3();
-		
+			break;
+				
 			case 8:printf("Gracias por haber usado nuestro programa.\n");
 			break;
 		
