@@ -1,16 +1,18 @@
-// TRABAJO ----->  Tabla Periodica
+// TRABAJO DE LA TABLA PERIODICA
 
-/*Programa que nos aporta informacion sobre la tabla periodica e incluye algunos cuestionarios a realizar.
-  El programa posee varias opciones, que voy a escribir brevemente para que el usuario tenga el trabajo esquematizado y se sepa las funciones
-  que puede realizar:
-t1. Introduce tus credenciales. EN ESTA OPCION NOS PODEMOS REGISTRAR PUDIENDO PONER EL NUMERO DE PERSONAS QUE SE VAN A REGISTRAR	
-t2. Mirar credenciales previamente introducidas. ESTA OPCION NOS APORTA TODOS LOS USUARIOS QUE SE HAN IDO REGISTRANDO EN EL PROGRAMA
-t3. Introduce el numero del elemento y te decimos informacion sobre el.	OPCION EN LA CUAL, EL PROGRAMA NOS FACILITARA ALGUNOS DATOS BASICOS 
-																		SOBRE LOS ELEMNTOS DE LA TABLA PERIODICA QUE NOS AYUDARAN A LA REALIZACION 
-																		DE LOS CUESTIONARIOS PROPUESTOS EN LAS SIGUIENTES OPCIONES
-t5. Realizar Cuestionario 1. OPCION QUE TE DERIVA A UN SIMPLE CUESTIONARIO EL CUAL TE DARA TU CALIFICACION OBTENIDA
-t6. Realizar Cuestionario 2. TIENE LA MISMA FUNCIONALIDAD QUE LA ANTERIOR OPCIO PERO TENDREMOS DISTINTAS PREGUNTAS
-t7. Cerrar el programa.
+/* En este trabajo tratamos de desarrollar un program que nos de información de la tabla periodica a la par que podemos guardar nuestras credenciales y resolver cuestionarios.
+
+  Nuestro programa posee un menú de opciones en el cual, según mostramos a continuación, podemos realizar todas estas opciones:
+  
+	1. Introducir tus credenciales. Nos podemos registrar nosotros y además podemos elegir el número de personas que se registran.	
+	2. Observar anteriores credenciales. Podemos observar todas las anteriores personas que han hecho uso del programa.
+	3. Puedes introducir el número del elemento de la tabla periodica que tu quieras y obtendras información tal como su nombre, su número atómico y periodo entre otros.
+	4. Ahora puedes hacer lo contrario y en vez de introducir el número pudes introducir el nombre.
+    5. Cuestionario 1. Tras la resolución almacenamos la nota.
+	6. Cuestionario 2. Tras la resolución almacenamos la nota.
+	7. Cuestionario 3. Tras la resolución almacenamos la nota.
+	8. Una vez tras haber acabado los tres cuestionarios habremos almacenado todas la notas, las cuales podrán ser guardadas en un fichero aparte para poder ser revisadas.
+	9. Cerrar el programa.
 */
 
 
@@ -49,6 +51,7 @@ void Credenciales(struct TCredenciales vector[]); // Puesto que las funciones so
 void elementos(struct TElementos elemento[]);	  // paso por referencia, tomando simpre las estructuras previas.
 void nombreElementos(struct TElementos elemento[]);
 void verCredenciales(struct TCredenciales vector[]);
+void guardarNotas(float A, float B, float C);
 float Cuestionario1();
 float Cuestionario2();
 float Cuestionario3();
@@ -63,6 +66,8 @@ int main(){
 //---------------------------------//
 	
 	int opcion,numero;
+	
+	float A, B, C; // Son las variables en las vamos a guardar el resultado de las notas de los cuestionarios.
 	
 	struct TTabla clase[500];
 	
@@ -79,6 +84,8 @@ int main(){
 	FILE*pfichero2;
 	
 	FILE*pfichero3;
+	
+	FILE*pfichero4;
 	
 //------------------------------//	
 	
@@ -106,6 +113,15 @@ int main(){
 		return 0;
 	}
 	
+	pfichero4 = fopen("Notas.txt","w");// Iniciamos el fichero y si no existe lo crea dándole el nombre asignado. Además lo ponemos en modo escritura.
+	
+	if(pfichero4 == NULL){
+		
+		printf("No se ha podido crear el fichero.\n");
+		return 0;
+	}
+//----------------------//
+	
 	while(fscanf(pfichero1, "%s" , clase[nelemento].elemento) != EOF){ // Escaneamos el fichero que dará lugar a la tabla periodica y lo guardamos en la estructura tabla.
 		
 		nelemento++;	
@@ -130,7 +146,7 @@ int main(){
 		
 	
 	do{
-		printf("\n\nIntroduce una de las opciones del menu (0 para ver las opciones)\n");
+		printf("\n\nIntroduce una de las opciones del menú (0 para ver las opciones)\n");
 		scanf( "%d" , &opcion );
 		switch(opcion){
 			
@@ -148,37 +164,44 @@ int main(){
 				   verCredenciales(vector);
 			break;
 		
-			case 3:printf("Indica el numero de un elemento y te decimos informacion de el.\n");
+			case 3:printf("Indica el número de un elemento y te decimos información de él.\n");
 				   elementos(elemento);
 			break;
 			
-			case 4:printf("Indica el nombre de un elemento y te decimos informacion de el.\n");
+			case 4:printf("Indica el nombre de un elemento y te decimos información de él.\n");
 				   nombreElementos(elemento);
 			break;
 		
 			case 5:printf("Ha entrado al Cuestionario 1.\n");
-				   Cuestionario1();
+				   A = Cuestionario1();
 			break;
 		
 			case 6:printf("Ha entrado al Cuestionario 2.\n");
-				   Cuestionario2();
+				   B = Cuestionario2();
 			break;	
 			
 			case 7:printf("Ha entrado al Cuestionario 3.\n");
-				   Cuestionario3();
+				   C = Cuestionario3();
 			break;
-				
-			case 8:
+			
+			case 8:printf("Notas.\n");
+				   guardarNotas(A, B, C);
+				   
+			break;
+		
+			case 9:
+			
 			system("cls");
+			
 			printf("Gracias por haber usado nuestro programa.\n");
-				
+		
 			break;
 		
 			default: printf("Por favor introduzca un valor entre 0 y 8.\n");
 		
 		}
 		
-	}while(opcion!=8);
+	}while(opcion!=9);
 	
 }
 
@@ -206,7 +229,9 @@ void pintamenu(){ //Función que muestra el menu usuario
 	
 	printf("\t7. Realizar Cuestionario 3.\n\n");
 	
-	printf("\t8. Cerrar el programa.\n\n");
+	printf("\t8. Guardar notas.\n\n");
+	
+	printf("\t9. Cerrar el programa.\n\n");
 	
 	printf("--------------------------------------------------------------------------------\n\n");
 }
@@ -436,6 +461,30 @@ void verCredenciales(struct TCredenciales vector[]){ //Funcion que permite ver l
 		printf("%d.- %s %s\n", i+1, vector[i].nombre, vector[i].apellidos);
 	}
 	
+}
+
+void guardarNotas(float A, float B, float C){
+	
+	system("cls");
+	
+	FILE*pfichero4;
+	
+//------------------------------//	
+
+	char nombre[100];
+	
+	pfichero4 = fopen("Notas.txt","a+");//Iniciamos el fichero en modo lectura y escritura
+	
+	printf("Ahora debes introducir tus credenciales de nuevo, y así guardar tus notas.\n");
+	fflush(stdin);
+	gets(nombre);
+	
+	fprintf( pfichero4, "%s\t%.2f\n", nombre, (A + B + C)/3.0);
+	
+	printf("\n\n\aYa hemos guardado su nota, si quiere verla debe acudir a su explorador de\narchivos y buscar por 'Notas.txt', muchas gracias por participar.\n\n");
+	
+	fclose(pfichero4);
+
 }
 
 float Cuestionario1(){ // Funcion Cuestionario 1
